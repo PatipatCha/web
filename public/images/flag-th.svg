@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>flag-th</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="99.660917" cy="100" rx="99.660917" ry="100"></ellipse>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="flag-th">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Oval" fill="#D8D8D8" xlink:href="#path-1"></use>
+            <path d="M281.377121,199.821429 L-91.3771205,199.821429 C-95.071489,199.821429 -98.0119048,197.440476 -98.0119048,194.583333 L-98.0119048,5.41666667 C-98.0119048,2.5 -94.9960938,0.178571429 -91.3771205,0.178571429 L281.301725,0.178571429 C284.996094,0.178571429 287.936509,2.55952381 287.936509,5.41666667 L287.936509,194.583333 C288.011905,197.5 284.996094,199.821429 281.377121,199.821429 Z" id="Shape" fill="#F5F5F5" fill-rule="nonzero" mask="url(#mask-2)"></path>
+            <g id="Group" mask="url(#mask-2)" fill-rule="nonzero" fill="#FF4B55">
+                <g transform="translate(-98.011905, -0.000000)" id="Shape">
+                    <path d="M379.389025,199.821429 L6.63478423,199.821429 C2.94041574,199.821429 0,197.440476 0,194.583333 L0,168.333333 L386.02381,168.333333 L386.02381,194.583333 C386.02381,197.5 383.007999,199.821429 379.389025,199.821429 Z"></path>
+                    <path d="M6.63478423,0.178571429 L379.31363,0.178571429 C383.007999,0.178571429 385.948414,2.55952381 385.948414,5.41666667 L385.948414,31.6666667 L0,31.6666667 L0,5.41666667 C0,2.5 3.01581101,0.178571429 6.63478423,0.178571429 Z"></path>
+                </g>
+            </g>
+            <rect id="Rectangle-path" fill="#41479B" fill-rule="nonzero" mask="url(#mask-2)" x="-98.0119048" y="63.2142857" width="386.02381" height="73.5714286"></rect>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,16 @@
+/node_modules
+/public/storage
+/storage/*.key
+/.idea
+Homestead.json
+Homestead.yaml
+.env
+/.env.local
+/laradock
+/vendor
+nbproject/
+/composer.lock
+npm-debug.log
+package-lock.json
+data
+.DS_Store

@@ -1,0 +1,37 @@
+// PSL Font
+@font-face {
+  font-family: 'PSLKandaPro';
+  src: url('../assets/fonts/PSLKandaPro.eot?#iefix') format('embedded-opentype'),
+       url('../assets/fonts/PSLKandaPro.woff') format('woff'),
+       url('../assets/fonts/PSLKandaPro.ttf') format('truetype'),
+       url('../assets/fonts/PSLKandaPro.svg#PSLKandaPro') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PSLKandaProBold';
+  src: url('../assets/fonts/PSLKandaProBold.eot?#iefix') format('embedded-opentype'),
+       url('../assets/fonts/PSLKandaProBold.woff') format('woff'),
+       url('../assets/fonts/PSLKandaProBold.ttf') format('truetype'),
+       url('../assets/fonts/PSLKandaProBold.svg#PSLKandaProBold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PSLKandaProExtraPro';
+  src: url('../assets/fonts/PSLKandaModernExtraPro.eot?#iefix') format('embedded-opentype'),
+       url('../assets/fonts/PSLKandaModernExtraPro.woff') format('woff'),
+       url('../assets/fonts/PSLKandaModernExtraPro.ttf') format('truetype'),
+       url('../assets/fonts/PSLKandaModernExtraPro.svg#PSLKandaModernExtraPro') format('svg');
+  font-weight: 800;
+  font-style: normal;
+}
+
+body {
+  font-family: 'PSLKandaProBold';
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+.f-600 {
+  font-family: 'PSLKandaProExtraPro';
+}

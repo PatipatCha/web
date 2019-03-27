@@ -1,0 +1,37 @@
+makro_web_b2c:
+  build: web/
+  tty: true
+  ports:
+    - "8090:80"
+  volumes:
+    - ../:/var/www/html
+  links:
+    - makro_web_mysql:mysql
+  external_links:
+    - makro-bss-api:makro-api-bss.loc
+    - makro-bss-redis:makro-bss-redis
+  environment:
+    ENVIRONMENT: docker
+  container_name: makro_web_b2c
+
+makro_web_mysql:
+  build: mysql/
+  ports:
+    - "33090:3306"
+  container_name: makro_web_mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: 123456
+
+makro_web_pma:
+  image: phpmyadmin/phpmyadmin
+  ports:
+    - "32090:80"
+  links:
+    - makro_web_mysql:mysql
+  container_name: makro_web_pma
+  environment:
+    PMA_ARBITRARY: 1
+    PMA_HOST: makro_web_mysql
+    PMA_PORT: 3306
+    PMA_USER: root
+    PMA_PASSWORD: 123456

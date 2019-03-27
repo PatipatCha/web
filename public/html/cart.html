@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Makro Cart V2</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/font-awesome/css/all.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <link rel="stylesheet" href="../css/app.css">
+
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+</head>
+
+<body style="overflow-y: scroll;">
+  
+  <div class="modal modal-shopping-option fade in" tabindex="-1" role="dialog" style="display: block; position: relative">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">ให้เราจัดส่งสินค้าหรือรับด้วยตัวเอง</h4>
+          <div class="box-select-language">
+            <div role="group" class="btn-group btn-group-sm"><a href="#" class="btn btn-default navbar-btn active">ไทย</a> <a href="#" class="btn btn-default navbar-btn">EN</a></div>
+          </div>
+        </div>
+        <div class="modal-body">
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="shopping-option" class="active">
+              <a href="#delevery" aria-controls="delevery" role="tab" data-toggle="tab">
+                <div class="icon">
+                  <i class="far fa-truck-container"></i>
+                </div>
+                <p class="title">จัดส่งสินค้า</p>
+                <p class="sub-title">เพิ่มความสะดวก ส่งสินค้ารวดเร็ว</p>
+              </a>
+            </li>
+            <li role="shopping-option">
+              <a href="#pickup" aria-controls="pickup" role="tab" data-toggle="tab">
+                <div class="icon">
+                  <i class="far fa-hand-holding-box"></i>
+                </div>
+                <p class="title">รับสินค้าด้วยตนเอง</p>
+                <p class="sub-title">เลือกช่วงเวลารับสินค้าที่คุณสะดวก</p>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="modal-footer">
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="delevery">
+              <div class="remark">กรุณาเลือกที่อยู่หรือกรอกรหัสไปรษณีย์</div>
+              <div class="choose-address more-address">
+                <div class="header clearfix">
+                  <div class="title">เลือกที่อยู่</div>
+                  <a href="#" class="new-address">
+                    <i class="far fa-plus"></i> เพิ่มที่อยู่ใหม่
+                  </a>
+                </div>
+                <div class="content-scroll">
+                  <div class="panel panel-default active">
+                    <div class="panel-body">
+                      <div class="media">
+                        <div class="media-left">
+                          <i class="far fa-store-alt"></i>
+                        </div>
+                        <div class="media-body media-top">
+                          <h4 class="media-heading">คอฟฟี่ แคท</h4>
+                          <p>606/21 ถนนอโศก-ดินแดง เขตดินแดง กรุงเทพ ...</p>
+                        </div>
+                        <div class="media-right">
+                          <a href="#">แก้ไข</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <div class="media">
+                        <div class="media-left">
+                          <i class="far fa-store-alt"></i>
+                        </div>
+                        <div class="media-body media-top">
+                          <h4 class="media-heading">คอฟฟี่ แคท</h4>
+                          <p>606/21 ถนนอโศก-ดินแดง เขตดินแดง กรุงเทพ ...</p>
+                        </div>
+                        <div class="media-right">
+                          <a href="#">แก้ไข</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <div class="media">
+                        <div class="media-left">
+                          <i class="far fa-store-alt"></i>
+                        </div>
+                        <div class="media-body media-top">
+                          <h4 class="media-heading">คอฟฟี่ แคท</h4>
+                          <p>606/21 ถนนอโศก-ดินแดง เขตดินแดง กรุงเทพ ...</p>
+                        </div>
+                        <div class="media-right">
+                          <a href="#">แก้ไข</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <div class="media">
+                        <div class="media-left">
+                          <i class="far fa-store-alt"></i>
+                        </div>
+                        <div class="media-body media-top">
+                          <h4 class="media-heading">คอฟฟี่ แคท</h4>
+                          <p>606/21 ถนนอโศก-ดินแดง เขตดินแดง กรุงเทพ ...</p>
+                        </div>
+                        <div class="media-right">
+                          <a href="#">แก้ไข</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="post-code">
+                <div class="header">
+                  <div class="title">หรือใส่รหัสไปรษณีย์</div>
+                </div>
+                
+                <form action="" method="POST" role="form" class="margin-bottom-15">
+                  <div class="input-group">
+                    <input type="text" class="form-control">
+                    <div class="remark">
+                      <i class="fas fa-exclamation-triangle"></i> รหัสไปรษณีย์ไม่ถูกต้อง
+                    </div>
+                    <span class="input-group-btn">
+                      <button type="submit" class="btn btn-default">
+                        <i class="far fa-check"></i> ตรวจสอบ
+                      </button>
+                    </span>
+                  </div>
+                </form>
+
+                <div class="panel panel-default active">
+                  <div class="panel-body">
+                    <div class="media">
+                      <div class="media-left">
+                        <i class="far fa-store-alt"></i>
+                      </div>
+                      <div class="media-body media-top">
+                        <h4 class="media-heading">รหัสไปรษณีย์</h4>
+                        <p>เขตดินแดง กรุงเทพ 10400</p>
+                      </div>
+                      <div class="media-right">
+                        <a href="#">แก้ไข</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cta">
+                  <div class="pull-left">
+                    <button type="button" class="btn btn-default btn-back">
+                      <i class="fas fa-arrow-left"></i> ย้อนกลับ
+                    </button>
+                  </div>
+                  
+                  <div class="pull-right">
+                    <button type="button" class="btn btn-primary">
+                      <i class="fas fa-check"></i> ตกลง
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div role="tabpanel" class="tab-pane" id="pickup">
+              <div class="pickup">
+                <div class="title">
+                  <span class="icon">
+                    <i class="far fa-hand-holding-box"></i>
+                  </span>
+                   คุณสามารถรับสินค้า<br>
+                   ด้วยตัวเองได้ที่แมคโคร<br>
+                   สาขาใกล้บ้านคุณ <span>เร็วๆ นี้</span>
+                </div>
+
+                <div class="box-search">
+                  <form role="search" action="">
+                    <div class="input-group">
+                      <input type="search" placeholder="ค้นหา" required="required" id="srch-term-1" name="q" autocomplete="off" class="form-control">
+                      <div class="input-group-btn">
+                        <button type="submit" class="btn btn-default">
+                          <i class="far fa-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+                <div class="choose-address more-address">
+                  <div class="header clearfix">
+                    <div class="title">เลือกสาขาแมคโคร</div>
+                    <a href="#" class="new-address">
+                      <i class="far fa-location"></i> เรียงตามระยะทางที่ใกล้ที่สุด
+                    </a>
+                  </div>
+                  <div class="content-scroll">
+                    <div class="panel panel-default active">
+                      <div class="panel-body">
+                        <div class="media">
+                          <div class="media-left">
+                            <i class="far fa-store-alt"></i>
+                          </div>
+                          <div class="media-body media-top">
+                            <h4 class="media-heading">คอฟฟี่ แคท</h4>
+                            <p>606/21 ถนนอโศก-ดินแดง เขตดินแดง กรุงเทพ ...</p>
+                          </div>
+                          <div class="media-right">
+                            <a href="#">แก้ไข</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        <div class="media">
+                          <div class="media-left">
+                            <i class="far fa-store-alt"></i>
+                          </div>
+                          <div class="media-body media-top">
+                            <h4 class="media-heading">คอฟฟี่ แคท</h4>
+                            <p>606/21 ถนนอโศก-ดินแดง เขตดินแดง กรุงเทพ ...</p>
+                          </div>
+                          <div class="media-right">
+                            <a href="#">แก้ไข</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        <div class="media">
+                          <div class="media-left">
+                            <i class="far fa-store-alt"></i>
+                          </div>
+                          <div class="media-body media-top">
+                            <h4 class="media-heading">คอฟฟี่ แคท</h4>
+                            <p>606/21 ถนนอโศก-ดินแดง เขตดินแดง กรุงเทพ ...</p>
+                          </div>
+                          <div class="media-right">
+                            <a href="#">แก้ไข</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        <div class="media">
+                          <div class="media-left">
+                            <i class="far fa-store-alt"></i>
+                          </div>
+                          <div class="media-body media-top">
+                            <h4 class="media-heading">คอฟฟี่ แคท</h4>
+                            <p>606/21 ถนนอโศก-ดินแดง เขตดินแดง กรุงเทพ ...</p>
+                          </div>
+                          <div class="media-right">
+                            <a href="#">แก้ไข</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cta">
+                  <div class="pull-right">
+                    <button type="button" class="btn btn-primary">
+                      <i class="fas fa-check"></i> ตกลง
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div class="modal-backdrop fade in"></div>
+</body>
+
+</html>

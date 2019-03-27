@@ -1,0 +1,15 @@
+makro_web_b2c:
+  build: web/
+  tty: true
+  ports:
+    - "8090:80"
+  volumes:
+    - ../:/var/www/html
+  environment:
+    ENVIRONMENT: develop
+  external_links:
+    - makro-mysql:mysql
+    - makro-bss-redis:redis
+    - makro-bss-api:makro-api-bss
+    #- makro-bss-redis:makro-bss-redis
+  container_name: makro_web_b2c
