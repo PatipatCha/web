@@ -9,7 +9,7 @@ use App\Bootstrap\Helpers\MakroHelper;
 use MakroSdk\Exceptions\SDKException;
 use Cache;
 
-class HomeController extends BaseController
+class mkpController extends BaseController
 {
     protected $cacheMinutes;
 
@@ -38,7 +38,7 @@ class HomeController extends BaseController
             env('HOME_MENU_LEFT_3'),
             env('HOME_MENU_LEFT_4')
         ];
-        $response = Cache::tags(['global', "lang_{$locale}", 'home.index'])->remember('homeGroupMenu_' . implode('_', $slugs), $this->cacheMinutes, function () use ($makroSdk, $slugs) {
+        $response = Cache::tags(['global', "lang_{$locale}", 'home.index_mkp'])->remember('homeGroupMenu_' . implode('_', $slugs), $this->cacheMinutes, function () use ($makroSdk, $slugs) {
             try {
                 $response = $makroSdk->group()->all([
                     'slug' => implode(',', $slugs),
@@ -73,7 +73,7 @@ class HomeController extends BaseController
             env('HOME_CAMPAIGN_2'),
             env('HOME_CAMPAIGN_3'),
         ];
-        $response = Cache::tags(['global', "lang_{$locale}_store_{$currentStore}", 'home.index'])->remember('homeCampaigns_' . implode('_', $slugs), $this->cacheMinutes, function () use ($makroSdk, $slugs) {
+        $response = Cache::tags(['global', "lang_{$locale}_store_{$currentStore}", 'home.index_mkp'])->remember('homeCampaigns_' . implode('_', $slugs), $this->cacheMinutes, function () use ($makroSdk, $slugs) {
             try {
                 $response = $makroSdk->campaign()->all([
                     'slug' => $slugs,
@@ -109,7 +109,7 @@ class HomeController extends BaseController
             $homeCampaignProductsCollection = array_get($homeCampaign, 'products');
             $productMongoIds = collect($homeCampaignProductsCollection)->pluck('product_id')->toArray();
             if (!empty($productMongoIds)) {
-                $response = Cache::tags(['global', "lang_{$locale}_store_{$currentStore}", 'store_price_' . StoreHelper::getCurrentStorePrice(), 'home.index'])->remember("homeCampaignProducts-{$key}", $this->cacheMinutes, function () use ($makroSdk, $homeCampaign, $productMongoIds) {
+                $response = Cache::tags(['global', "lang_{$locale}_store_{$currentStore}", 'store_price_' . StoreHelper::getCurrentStorePrice(), 'home.index_mkp'])->remember("homeCampaignProducts-{$key}", $this->cacheMinutes, function () use ($makroSdk, $homeCampaign, $productMongoIds) {
                     try {
                         $param = [
                             'per_page' => count($productMongoIds),
@@ -152,7 +152,7 @@ class HomeController extends BaseController
         /************ END : Campaign ************/
 
         /************ Brands ************/
-        $response = Cache::tags(['global', "lang_{$locale}", 'home.index'])->remember('brandsArr', $this->cacheMinutes, function () use ($makroSdk) {
+        $response = Cache::tags(['global', "lang_{$locale}", 'home.index_mkp'])->remember('brandsArr', $this->cacheMinutes, function () use ($makroSdk) {
             try {
                 $response = $makroSdk->brand()->get(['per_page' => 16, 'order' => 'priority|ASC']);
 
@@ -187,7 +187,7 @@ class HomeController extends BaseController
         /************ END : Brands ************/
 
         /************ Banners ************/
-        $banner1 = Cache::tags(['global', "lang_{$locale}", 'home.index'])->remember('banners1', $this->cacheMinutes, function () use ($makroSdk) {
+        $banner1 = Cache::tags(['global', "lang_{$locale}", 'home.index_mkp'])->remember('banners1', $this->cacheMinutes, function () use ($makroSdk) {
             try {
                 return $makroSdk->banner()->getByGroupPosition('banner-1');
             } catch (\Exception $e) {
@@ -197,7 +197,7 @@ class HomeController extends BaseController
             return null;
         });
 
-        $banner2 = Cache::tags(['global', "lang_{$locale}", 'home.index'])->remember('banners2', $this->cacheMinutes, function () use ($makroSdk) {
+        $banner2 = Cache::tags(['global', "lang_{$locale}", 'home.index_mkp'])->remember('banners2', $this->cacheMinutes, function () use ($makroSdk) {
             try {
                 return $makroSdk->banner()->getByGroupPosition('banner-2');
             } catch (\Exception $e) {
@@ -207,7 +207,7 @@ class HomeController extends BaseController
             return null;
         });
 
-        $banner3 = Cache::tags(['global', "lang_{$locale}", 'home.index'])->remember('banners3', $this->cacheMinutes, function () use ($makroSdk) {
+        $banner3 = Cache::tags(['global', "lang_{$locale}", 'home.index_mkp'])->remember('banners3', $this->cacheMinutes, function () use ($makroSdk) {
             try {
 
                 $response = $makroSdk->banner()->get([
@@ -224,7 +224,7 @@ class HomeController extends BaseController
             return null;
         });
 
-        $banner4 = Cache::tags(['global', "lang_{$locale}", 'home.index'])->remember('banners4', $this->cacheMinutes, function () use ($makroSdk) {
+        $banner4 = Cache::tags(['global', "lang_{$locale}", 'home.index_mkp'])->remember('banners4', $this->cacheMinutes, function () use ($makroSdk) {
             try {
                 return $makroSdk->banner()->getByGroupPosition('banner-4');
             } catch (\Exception $e) {
@@ -246,9 +246,12 @@ class HomeController extends BaseController
         $data['seo_keywords'] = trans('frontend.website_seo_keywords');
         $data['seo_description'] = trans('frontend.website_seo_description');
 
+        $data['mkp'] = trans('frontend.mkp');
+
         // dd($data);
         // $data['homeCampaigns']['campaign-1']['products'] = array_slice($data['homeCampaigns']['campaign-1']['products'], 0, 4);
-        return view('home.index', $data);
+        return view('home.index_mkp', $data )->with( 'p','mkp')
+                                            ->with('first_name','KAKA');
     }
 
     public function makroCardShow($cardId)

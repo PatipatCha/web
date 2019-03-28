@@ -92,6 +92,12 @@ Route::group(['middleware' => ['web']], function () {
             'uses' => 'HomeController@index'
         ]);
 
+        // FWG
+        Route::get('/mkp', [
+            'as' => 'home.index_mkp',
+            'uses' => 'mkpController@index'
+        ]);
+        //End
         Route::get('/search', [
             'as' => 'search.index',
             'uses' => 'ProductController@search'

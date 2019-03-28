@@ -795,6 +795,7 @@ Do you still want to change the branch?',
     'view_map' => 'View map',
     'store_mobile' => '02-335-5300 press 2',
     'product_recmmend' => 'Recommended Product',
-    'not_allow_th_char' => 'Please change the keyboard’s language to English'
+    'not_allow_th_char' => 'Please change the keyboard’s language to English',
+    'mkp' => 'Customer is : '
 );
 

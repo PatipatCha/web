@@ -177,6 +177,8 @@ class AuthHelper
             static::storeInSession($user);
         }
 
+        
+
         return $user;
     }
 }

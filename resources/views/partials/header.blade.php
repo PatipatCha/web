@@ -1,3 +1,4 @@
+
 <header class="header-main">
 <!-- <div class="box-welcome">
         <div class="box-icon-profile"><div class="clearfix"></div>
@@ -9,11 +10,32 @@
 
     <div class="box-bar navbar hidden-sm hidden-xs">
         <div class="container">
+<?php $user = \App\Bootstrap\Helpers\AuthHelper::user(); ?>
+<?php if (!$user) { ?>
+            <div class="row">
             <ul class="nav navbar-nav navbar-right" id="user-menu-desktop">
-                <?php
-                $user = \App\Bootstrap\Helpers\AuthHelper::user();
-                ?>
-                <?php if (!$user) { ?>
+<!-- MKP Section -->
+                @if( !empty($p) )
+                <li class="navbar-left navbar-text">
+                    <b>{{ trans('frontend.mkp') }}</b>
+                </li>
+                <li class="navbar-left">
+                    <select>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                    </select>
+                </li>
+                <!-- -->
+                <li>
+                    @include('partials.user_menu')
+                </li>
+                <!-- -->
+                @else
+                <li>
+                    <a class="navbar-text" href="{{ route('home.index_mkp') }}"
+                        id="lnk_mkp">MKP</a>
+                </li>
                 <li>
                     <a class="navbar-text" href="{{ route('members.register') }}"
                        id="lnk_register">{{ trans('frontend.register') }}</a>
@@ -22,19 +44,21 @@
                     <a class="navbar-text" href="javascript:void(0)" data-toggle="modal" data-target=".login-modal-sm"
                        id="lnk_sign_in">{{ trans('frontend.sign_in') }}</a>
                 </li>
-            <!-- <li>
+                @endif
+<!-- End MKP Section -->
+                <!-- <li>
                     <p class="navbar-text">
                         {{ trans('frontend.welcome_to_makroclick_store') }}
                     </p>
                 </li> -->
-                <?php } else { ?>
-                <?php
+<?php } else { ?>
+<?php
                 // $token = session()->get('makroclickMember');
                 // $key = env('API_JWT_KEY', md5('jwtkey_makroclick_member_authentication_api'));
                 // $decrypted = \Firebase\JWT\JWT::decode($token, $key, array('HS256'));
                 // $member = json_decode(json_encode($decrypted), TRUE);
                 // s($member);
-                ?>
+?>
                 <li>
                     @include('partials.user_menu')
                 </li>
@@ -77,6 +101,7 @@
                 </div> -->
                 </li>
             </ul>
+            </div>
 
             <div class="box-l hide"></div>
 
@@ -348,6 +373,7 @@
                         $user = \App\Bootstrap\Helpers\AuthHelper::user();
                         ?>
                         <?php if ( !$user ) { ?>
+
                         <li>
                             <a href="{{ route('members.register') }}">
                                 {{ trans('frontend.register') }}
