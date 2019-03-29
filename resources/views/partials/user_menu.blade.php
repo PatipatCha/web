@@ -5,7 +5,13 @@
 --}}
 <?php
 $user = \App\Bootstrap\Helpers\AuthHelper::user();
+// Add FWG --> IF First_name Value
+if($p=='mkp'){
+$first_name = $first_name;
+}else{
 $first_name = array_get($user, 'profile.first_name');
+}
+// End FWG
 if (empty($first_name)) {
     $first_name = array_get($user, 'username');
 }

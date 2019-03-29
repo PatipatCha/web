@@ -251,7 +251,7 @@ class mkpController extends BaseController
         // dd($data);
         // $data['homeCampaigns']['campaign-1']['products'] = array_slice($data['homeCampaigns']['campaign-1']['products'], 0, 4);
         return view('home.index_mkp', $data )->with( 'p','mkp')
-                                            ->with('first_name','KAKA');
+                                            ->with('first_name','Patipat TestTest');
     }
 
     public function makroCardShow($cardId)
